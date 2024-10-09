@@ -289,130 +289,187 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/0IggFTS_HP0?si=WoXQ5s6aoyzJ0QYz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </body>
     
-
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R0ZXJ77CQJ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DFVXG24D1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-R0ZXJ77CQJ');
+        gtag('config', 'G-4DFVXG24D1',{ 'debug_mode': true });
     </script>
 </head>
 <body>
-    <div>Order your items here</div>
-    <button> View Items</button>
+    <div>Click the buttons for custom events</div>
+
+    <!-- Select Item button -->
+    <button id="select-item">Select Item</button>
+
+    <!-- Add to Cart button -->
+    <button id="add-to-cart">Add to Cart</button>
+
+    <!-- View Item List button -->
+    <button id="view-item-list">View Item List</button>
+
+      <!-- Begin Checkout button -->
+    <button id="begin-checkout">Begin Checkout</button>
+
+  <!-- Remove from Cart button -->
+    <button id="remove-from-cart">Remove from Cart</button>
+
+
+
     <script>
-  gtag("event", "view_item_list", {
-  item_list_id: "related_products",
-  item_list_name: "Related products",
-  items: [
-        // If someone purchases more than one item,
-        // you can add those items to the items array
-         {
-          item_id: "SKU_12345",
-          item_name: "Stan and Friends Tee",
-          affiliation: "Google Merchandise Store",
-          coupon: "SUMMER_FUN",
-          discount: 2.22,
-          index: 0,
-          item_brand: "Google",
-          item_category: "Apparel",
-          item_category2: "Adult",
-          item_category3: "Shirts",
-          item_category4: "Crew",
-          item_category5: "Short sleeve",
-          item_list_id: "related_products",
-          item_list_name: "Related Products",
-          item_variant: "green",
-          location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-          price: 10.01,
-          quantity: 3
-        }]
+    // Event for selecting an item
+    document.getElementById("select-item").addEventListener("click", function () {
+        gtag("event", "select_item", {
+            item_list_id: "related_products",
+            item_list_name: "Related Products",
+            items: [
+            {
+              item_id: "SKU_12345",
+              item_name: "Stan and Friends Tee",
+              affiliation: "Google Merchandise Store",
+              coupon: "SUMMER_FUN",
+              discount: 2.22,
+              index: 0,
+              item_brand: "Google",
+              item_category: "Apparel",
+              item_category2: "Adult",
+              item_category3: "Shirts",
+              item_category4: "Crew",
+              item_category5: "Short sleeve",
+              item_list_id: "related_products",
+              item_list_name: "Related Products",
+              item_variant: "green",
+              location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+              price: 10.01,
+              quantity: 3
+            }]
+        });
+    });
+
+    // Event for adding an item to the cart
+    document.getElementById("add-to-cart").addEventListener("click", function () {
+        gtag("event", "add_to_cart", {
+            currency: "USD",
+            value: 30.03,
+            items: [
+            {
+              item_id: "SKU_12345",
+              item_name: "Stan and Friends Tee",
+              affiliation: "Google Merchandise Store",
+              coupon: "SUMMER_FUN",
+              discount: 2.22,
+              index: 0,
+              item_brand: "Google",
+              item_category: "Apparel",
+              item_category2: "Adult",
+              item_category3: "Shirts",
+              item_category4: "Crew",
+              item_category5: "Short sleeve",
+              item_list_id: "related_products",
+              item_list_name: "Related Products",
+              item_variant: "green",
+              location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+              price: 10.01,
+              quantity: 3
+            }]
+        });
+    });
+
+    // Event for viewing an item list
+    document.getElementById("view-item-list").addEventListener("click", function () {
+        gtag("event", "view_item_list", {
+            item_list_id: "related_products",
+            item_list_name: "Related Products",
+            items: [
+            {
+              item_id: "SKU_12345",
+              item_name: "Stan and Friends Tee",
+              affiliation: "Google Merchandise Store",
+              coupon: "SUMMER_FUN",
+              discount: 2.22,
+              index: 0,
+              item_brand: "Google",
+              item_category: "Apparel",
+              item_category2: "Adult",
+              item_category3: "Shirts",
+              item_category4: "Crew",
+              item_category5: "Short sleeve",
+              item_list_id: "related_products",
+              item_list_name: "Related Products",
+              item_variant: "green",
+              location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+              price: 10.01,
+              quantity: 3
+            }]
+        });
+    });
+
+      // Event for beginning checkout process
+    document.getElementById("begin-checkout").addEventListener("click", function () {
+        gtag("event", "begin_checkout", {
+            currency: "USD",
+            value: 30.03,
+            coupon: "SUMMER_FUN",
+            items: [
+            {
+              item_id: "SKU_12345",
+              item_name: "Stan and Friends Tee",
+              affiliation: "Google Merchandise Store",
+              coupon: "SUMMER_FUN",
+              discount: 2.22,
+              index: 0,
+              item_brand: "Google",
+              item_category: "Apparel",
+              item_category2: "Adult",
+              item_category3: "Shirts",
+              item_category4: "Crew",
+              item_category5: "Short sleeve",
+              item_list_id: "related_products",
+              item_list_name: "Related Products",
+              item_variant: "green",
+              location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+              price: 10.01,
+              quantity: 3
+            }]
+        });
+    });
+
+        // Event for removing an item from the cart
+    document.getElementById("remove-from-cart").addEventListener("click", function () {
+        gtag("event", "remove_from_cart", {
+            currency: "USD",
+            value: 30.03,
+            items: [
+            {
+              item_id: "SKU_12345",
+              item_name: "Stan and Friends Tee",
+              affiliation: "Google Merchandise Store",
+              coupon: "SUMMER_FUN",
+              discount: 2.22,
+              index: 0,
+              item_brand: "Google",
+              item_category: "Apparel",
+              item_category2: "Adult",
+              item_category3: "Shirts",
+              item_category4: "Crew",
+              item_category5: "Short sleeve",
+              item_list_id: "related_products",
+              item_list_name: "Related Products",
+              item_variant: "green",
+              location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+              price: 10.01,
+              quantity: 3
+            }]
+        });
     });
     </script>
 </body>
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Events Example</title>
-    
-    <!-- Include gtag.js code here -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-</head>
-<body>
-
-    <h1>Custom Events Demo</h1>
-
-    <!-- Select Item from a List -->
-    <button onclick="selectItem('item123')">Select Item</button>
-
-    <!-- View Item Details -->
-    <button onclick="viewItemDetails('item123')">View Details</button>
-
-    <!-- Add/Remove from Shopping Cart -->
-    <button onclick="addToCart('item123')">Add to Cart</button>
-    <button onclick="removeFromCart('item123')">Remove from Cart</button>
-
-    <!-- Initiate Checkout Process -->
-    <button onclick="initiateCheckout()">Checkout</button>
-
-    <script>
-        // Add your custom event functions here
-
-        function selectItem(itemId) {
-            gtag('event', 'select_item', {
-                'item_id': itemId
-            });
-        }
-
-        function viewItemDetails(itemId) {
-            gtag('event', 'view_item_details', {
-                'item_id': itemId
-            });
-        }
-
-        function addToCart(itemId) {
-            gtag('event', 'add_to_cart', {
-                'item_id': itemId
-            });
-        }
-
-        function removeFromCart(itemId) {
-            gtag('event', 'remove_from_cart', {
-                'item_id': itemId
-            });
-        }
-
-        function initiateCheckout() {
-            gtag('event', 'begin_checkout', {
-                'currency': 'USD',
-                'value': 100.00, // Example total value
-                'items': [{ 
-                    'item_id': 'item123', 
-                    'item_name': 'Sample Item',
-                    'price': 100.00,
-                    'quantity': 1 
-                }]
-            });
-        }
-    </script>
-
-</body>
 </html>
-
